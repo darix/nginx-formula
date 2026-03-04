@@ -1,0 +1,26 @@
+# Let's configure some nginx instances SUSE style
+
+follow pillar.example
+
+## Required salt master config:
+
+```
+file_roots:
+  base:
+    - {{ salt_base_dir }}/salt
+    - {{ formulas_base_dir }}/nginx/salt
+```
+
+## cfgmgmt-template integration
+
+if you are using our [cfgmgmt-template](https://github.com/darix/cfgmgmt-template) as a starting point the saltmaster you can simplify the setup with:
+
+```
+git submodule add https://github.com/darix/nginx formulas/nginx
+ln -s /srv/cfgmgmt/formulas/nginx/config/enable_nginx.conf /etc/salt/master.d/
+systemctl restart salt-master.service
+```
+
+## License
+
+See LICENSE
