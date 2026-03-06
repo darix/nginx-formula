@@ -8,7 +8,7 @@ follow pillar.example
 file_roots:
   base:
     - {{ salt_base_dir }}/salt
-    - {{ formulas_base_dir }}/nginx/salt
+    - {{ formulas_base_dir }}/nginx/
 ```
 
 ## cfgmgmt-template integration
